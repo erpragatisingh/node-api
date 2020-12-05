@@ -1,5 +1,9 @@
 # node-api
 
+Details Article available @Medium.com
+
+https://erpragatisingh.medium.com/crud-operation-with-sql-server-and-node-js-e1db67cd8beb
+
 CD to your project folder
 
 C:\Users\lp\Documents\sample-CRUD-SQL> npm install
