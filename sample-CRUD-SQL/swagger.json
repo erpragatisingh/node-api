@@ -1,0 +1,88 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My User Project CRUD",
+        "description": "My User Project Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Users",
+            "description": "API for users in the system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/getAllData": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get all data in system",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/addNewData": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "required": [
+                                "name",
+                                "email",
+                                "password"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                },
+                                "password": {
+                                    "type": "string"
+                                }
+                            },
+                            "companies": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "summary": "addNewData all data in system",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}

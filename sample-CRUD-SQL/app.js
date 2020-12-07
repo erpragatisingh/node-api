@@ -1,4 +1,5 @@
 const express = require('express')
+
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const fs = require('fs')
@@ -8,6 +9,11 @@ const router = require('./routes/route')
 const app = express()
 
 app.use(cors())
+
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
+
+
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -22,7 +28,7 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, '/logs/access.lo
  
 // setup the logger
 app.use(morgan('combined', { stream: accessLogStream }))
-
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(router)
 
 const port = 3000
