@@ -1,0 +1,8 @@
+{
+    "getUser" : "SELECT * FROM [dbo].[user_info] where name = @name",
+    "getUserSession" : "SELECT * FROM [dbo].[user_session] where name = @name",
+    "registration" :"INSERT INTO [dbo].[user_info] (email,name,password) VALUES (@email,@user,@password)",
+    "insertUserSession" :"INSERT INTO [dbo].[user_session] (name,session_token,device_id,login_time) VALUES (@name,@session_token,@device_id,@login_time)",
+    "updateUserSession" : "UPDATE [dbo].[user_session] SET session_token = @session_token WHERE name = @name (SELECT * FROM [dbo].[user_session]  WHERE login_time = (SELECT MIN(login_time) FROM [dbo].[user_session]))" 
+
+}
