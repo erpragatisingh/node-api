@@ -13,21 +13,28 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InNhcm9qQG1zbi5jb20iLCJpYXQiOjE2MDc3NjczODEsImV4cCI6MTYwNzc2Nzc0MX0.KhWqvZXst43DV8C9ltIqr5p5AvFAKGQWKiZLMQbUcuY",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"title\": \"Create a NEW project\",\r\n    \"order\": 1,\r\n    \"completed\": false\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/items/10",
+					"raw": "http://localhost:3000/api/user/getAllData",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"items",
-						"10"
+						"api",
+						"user",
+						"getAllData"
 					]
 				},
 				"description": "gets list of item"
@@ -111,6 +118,164 @@
 					"body": ""
 				}
 			]
+		},
+		{
+			"name": "http://localhost:3000/api/auth/registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\": \"saroj@msn.com\",\r\n     \"email\" : \"saroj@gmail.com\",\r\n     \"password\": \"saroj1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\": \"saroj@msn.com\",\r\n     \"password\": \"saroj1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InNhcm9qQG1zbi5jb20iLCJpYXQiOjE2MDc3NjczODEsImV4cCI6MTYwNzc2Nzc0MX0.KhWqvZXst43DV8C9ltIqr5p5AvFAKGQWKiZLMQbUcuY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Create a NEW project\",\r\n    \"order\": 1,\r\n    \"completed\": false\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/getAllData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"getAllData"
+					]
+				},
+				"description": "get all item"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"items"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/api/user/deleteData",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InNhcm9qQG1zbi5jb20iLCJpYXQiOjE2MDc3Njc3ODksImV4cCI6MTYwNzc2ODE0OX0.7v41rGfOwTdWKXaB-PKvkdT8onoqa-DaULmgkloSZL4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"name\": \"test user\"\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/deleteData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"deleteData"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
